@@ -1,0 +1,3 @@
+class WeatherApp::Weather
+    
+end
