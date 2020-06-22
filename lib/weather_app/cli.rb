@@ -1,14 +1,15 @@
 class WeatherApp::CLI
-    def functionality
+    def start_app
         puts "\nHello! Welcome to The Weather App!"
-        until @user_input == "exit"
-            enter_location
-            get_user_input
-            verify_location
-            weather_five_days
-            next_step
-        end
-        exit
+        WeatherApp::API.weather_five_days
+        # until @user_input == "exit"
+        #     enter_location
+        #     get_user_input
+        #     verify_location
+        #     weather_five_days
+        #     next_step
+        # end
+        # exit
     end
 
     def enter_location
@@ -32,6 +33,6 @@ class WeatherApp::CLI
     end
 
     def exit
-        
+
     end
 end

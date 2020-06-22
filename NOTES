@@ -1,6 +1,6 @@
 Weather App Steps
 CLI: Hello welcome to Weather App!
-CLI: Please enter a US location (city, state), I suggest using zipcode to avoid typos
+CLI: Please enter a US location (city, state), I suggest using zipcode to avoid typos ## give 2 options
 CLI: Verify again if this is the city, state they are searching for.
 USER: User enter city and state
 API: Get data from weather API
@@ -11,11 +11,14 @@ USER: Enter new city or exit
 
 
 EXTRAS:
-colorize gem
-fun cli things (refer to Beth's post)
+- colorize gem
+- fun rain sunny etc
+- fun cli things (refer to Beth's post)
 
 
 **** Classes (REMEMBER separation of concerns) ****
 CLI - controller - communicates with my user
 Weather - where objects are created and stored for user display
 API - bring in external API here, instantiate my objects
+
+REMEMBER TO WORK ON Designing your MVP = 'Minimum Viable Product' FIRST, then play with the fun stuff
