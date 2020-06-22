@@ -1,5 +1,0 @@
-#!/usr/bin/env ruby
-
-require_relative "../lib/weather_app"
-
-WeatherApp::API.new.weather_five_days

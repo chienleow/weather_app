@@ -5,7 +5,7 @@ CLI: Verify again if this is the city, state they are searching for.
 USER: User enter city and state
 API: Get data from weather API
 WEATHER: New weather objects are created and stored
-CLI: Print weather for the next 5 days
+CLI: Display weather for the next 5 days
 CLI: Ask User what they want to do next
 USER: Enter new city or exit
 
