@@ -7,7 +7,7 @@ class WeatherApp::API
         response = HTTParty.get("http://api.openweathermap.org/data/2.5/forecast?q=#{city},#{state_code},US&units=imperial&appid=#{key}")
         # binding.pry
         main_weather = response["list"][0]["weather"].first["main"]
-        temperature = response["list"][0]["main"]["temp"]
+        temperature = response["list"][0]["main"]["temp"].to_s
         WeatherApp::Weather.new(main_weather, temperature)
         # binding.pry
     end

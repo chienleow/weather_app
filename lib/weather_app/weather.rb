@@ -7,6 +7,7 @@ class WeatherApp::Weather
     def initialize(main_weather, temperature)
         @main_weather = main_weather
         @temperature = temperature
+        # binding.pry
         save
     end
 
@@ -16,5 +17,6 @@ class WeatherApp::Weather
 
     def self.all
         @@all
+        # binding.pry
     end
 end

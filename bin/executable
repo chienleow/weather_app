@@ -3,4 +3,5 @@
 require_relative "../lib/weather_app"
 
 # WeatherApp::API.new.weather_five_days
-WeatherApp::CLI.new.start_app
+WeatherApp::Weather.new(main_weather, temperature)
+# WeatherApp::CLI.new.start_app
