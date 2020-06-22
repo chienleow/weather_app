@@ -1,6 +1,6 @@
 class WeatherApp::API
 
-    def weather_five_days
+    def self.weather_five_days
         key = "d11a067cc49844d662653dd873932b94"
         city = "Wilmore"
         state_code ="KY"

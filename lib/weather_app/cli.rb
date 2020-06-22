@@ -1,7 +1,7 @@
 class WeatherApp::CLI
     def start_app
         puts "\nHello! Welcome to The Weather App!"
-        weather_five_days
+        weather_info
         # until @user_input == "exit"
         #     enter_location
         #     get_user_input
@@ -24,8 +24,8 @@ class WeatherApp::CLI
 
     end
 
-    def weather_five_days
-        weather_info = WeatherApp::Weather.all
+    def weather_info
+        info = WeatherApp::API.weather_five_days
         binding.pry
     end
 
