@@ -11,50 +11,40 @@ class WeatherApp::CLI
         exit
     end
 
-    # def invalid_api_response
-    #     puts "\Invalid city name, please enter again." #try zipcode?
-    # end
-
-    def enter_location
-        puts "\Please enter the city you want to search for."
+    def enter_zipcode
+        puts "\Please enter a US zipcode you want to search for."
     end
 
     def get_user_input
-        user_input = gets.strip # caps or not doesn't affect the result
-        until valid_city_input(user_input)
+        user_input = gets.strip.to_i
+        until valid_input(user_input)
             invalid_input
-            user_input = gets.strip
+            user_input = gets.strip.to_i
         end
     end
 
-    def valid_city_input(user_input)
-        if !WeatherApp::API.valid_response.has_value?("city not found")
-            user_input
-        end
+    def valid_input(user_input)
+        user_input >= "00501" && user_input <= "99950" #try random zipcode to see if it breaks REMEMBER!!!
     end
 
-    def invalid_city_input
-        puts "\ERROR: Invalid city name, please try again.".colorize(:red)
-    end
-
-    def verify_location
-
+    def invalid_input
+        puts "\nERROR: Sorry, input error, please try again.".colorize(:red)
     end
 
     def weather_info
         info = WeatherApp::Weather.all
         info.each do |weather|
-            puts "| Weather: #{weather.main_weather} | Temperature: #{weather.temperature} |"
+            puts "| City: #{weather.city} | Weather: #{weather.main_weather} | Temperature: #{weather.temperature} |"
         end
     end
 
-    def next_step
-        puts "\nType 'exit' to quit app or hit any key to choose a new category.".colorize(:yellow)
-        user_input = gets.strip
-    end
+    # def next_step
+    #     puts "\nType 'exit' to quit app or hit any key to choose a new category.".colorize(:yellow)
+    #     user_input = gets.strip
+    # end
 
-    def exit
-        puts "\nGoodbye, thanks for using the app!"
-        puts "\nWherever you go, no matter what the weather, always bring your own sunshine. -Anthony J.D'Angelo"
-    end
+    # def exit
+    #     puts "\nGoodbye, thanks for using the app!"
+    #     puts "\nWherever you go, no matter what the weather, always bring your own sunshine. -Anthony J.D'Angelo"
+    # end
 end

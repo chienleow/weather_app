@@ -1,10 +1,11 @@
 class WeatherApp::Weather
 
-    attr_accessor :main_weather, :temperature
+    attr_accessor :city, :main_weather, :temperature
 
     @@all = []
 
-    def initialize(main_weather, temperature)
+    def initialize(city, main_weather, temperature)
+        @city = city
         @main_weather = main_weather
         @temperature = temperature
         # binding.pry
@@ -16,7 +17,7 @@ class WeatherApp::Weather
     end
 
     def self.all
-        WeatherApp::API.get_weather_five_days if @@all.empty?
+        WeatherApp::API.get_weather if @@all.empty?
         @@all
         # binding.pry
     end
