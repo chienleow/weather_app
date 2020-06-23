@@ -31,10 +31,9 @@ class WeatherApp::CLI
     end
 
     def weather_info
-        api_response = WeatherApp::Weather.all
-        api_response.each do |weather|
-            puts "| City: #{weather.city} | Weather: #{weather.main_weather} | Temperature: #{weather.temperature} |"
-        end
+        get_user_input
+        api_response = WeatherApp::API.get_weather(user_input)
+            puts "| City: #{api_response.city} | Weather: #{api_response.main_weather} | Temperature: #{api_response.temperature} |"
     end
 
     def next_step
