@@ -8,7 +8,6 @@ class WeatherApp::Weather
         @city = city
         @main_weather = main_weather
         @temperature = temperature
-        # binding.pry
         save
     end
 

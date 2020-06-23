@@ -3,7 +3,6 @@ class WeatherApp::CLI
         puts "\nHello! Welcome to The Weather App!"
         until @user_input == "exit"
             enter_zipcode
-            get_user_input
             weather_info
             next_step
         end
@@ -16,9 +15,11 @@ class WeatherApp::CLI
 
     def get_user_input
         user_input = gets.strip.to_i
-        until valid_input(user_input)
+        if valid_input(user_input)
+            return user_input
+        else
             invalid_input
-            user_input = gets.strip.to_i
+            get_user_input
         end
     end
 
@@ -31,8 +32,7 @@ class WeatherApp::CLI
     end
 
     def weather_info
-        get_user_input
-        api_response = WeatherApp::API.get_weather(user_input)
+        api_response = WeatherApp::API.get_weather(get_user_input)
             puts "| City: #{api_response.city} | Weather: #{api_response.main_weather} | Temperature: #{api_response.temperature} |"
     end
 
