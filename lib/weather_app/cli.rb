@@ -24,7 +24,7 @@ class WeatherApp::CLI
     end
 
     def valid_input(user_input)
-        user_input.between?(00501, 99950) #try random zipcode to see if it breaks REMEMBER!!!
+        user_input.between?(00501, 99950)
     end
 
     def invalid_input
