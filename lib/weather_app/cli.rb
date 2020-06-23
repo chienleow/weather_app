@@ -33,6 +33,7 @@ class WeatherApp::CLI
 
     def weather_info
         api_response = WeatherApp::API.get_weather(get_user_input)
+            puts "Displaying weather for the next 5 days"
             puts "| City: #{api_response.city} | Weather: #{api_response.main_weather} | Temperature: #{api_response.temperature} |"
     end
 
