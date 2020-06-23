@@ -10,13 +10,13 @@ class WeatherApp::CLI
         puts "\Please enter a US zipcode you want to search for.".colorize(:light_blue)
     end
 
-    def get_user_input
+    def user_zipcode
         user_input = gets.strip.to_i
         if valid_input(user_input)
             return user_input
         else
             invalid_input
-            get_user_input
+            user_zipcode
         end
     end
 
@@ -30,7 +30,7 @@ class WeatherApp::CLI
 
     def weather_info
         WeatherApp::Weather.all.clear # to avoid duplicates
-        WeatherApp::API.get_weather(get_user_input)
+        WeatherApp::API.get_weather(user_zipcode)
         api_response = WeatherApp::Weather.all
             puts "\nDisplaying weather in '#{api_response.first.city}' for the next 5 days:".colorize(:blue)
             api_response.each do |item|

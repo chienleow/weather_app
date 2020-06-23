@@ -8,7 +8,7 @@ class WeatherApp::API
         response = HTTParty.get("http://api.openweathermap.org/data/2.5/forecast?zip=#{zipcode},#{country}&units=imperial&mode=xml&appid=#{api_key}")
         if response.first.include?("ClientError")
             WeatherApp::CLI.new.invalid_input
-            WeatherApp::CLI.new.get_user_input
+            WeatherApp::CLI.new.user_zipcode
         else
             city = response["weatherdata"]["location"]["name"]
             data = response["weatherdata"]["forecast"]["time"]
