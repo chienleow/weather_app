@@ -6,7 +6,6 @@ class WeatherApp::API
         country = "US"
         api_key = ENV['OPEN_WEATHER_MAP_API_KEY']
         response = HTTParty.get("http://api.openweathermap.org/data/2.5/forecast?zip=#{zipcode},#{country}&units=imperial&mode=xml&appid=#{api_key}") # XML
-        # binding.pry
         # if response.has_value?("404")
         #     WeatherApp::CLI.new.invalid_input
         #     WeatherApp::CLI.new.get_user_input
