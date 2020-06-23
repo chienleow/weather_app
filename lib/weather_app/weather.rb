@@ -1,10 +1,11 @@
 class WeatherApp::Weather
 
-    attr_accessor :main_weather, :time_from
+    attr_accessor :city, :main_weather, :time_from
 
     @@all = []
 
-    def initialize(main_weather, time_from)
+    def initialize(city, main_weather, time_from)
+        @city = city
         @main_weather = main_weather
         @time_from = time_from
         save
