@@ -13,8 +13,7 @@ class WeatherApp::API
         user_input = zipcode
         binding.pry
         country = "US"
-        key = "d11a067cc49844d662653dd873932b94"
-        response = HTTParty.get("http://api.openweathermap.org/data/2.5/weather?zip=#{zipcode},#{country}&units=imperial&appid=#{key}")
+        response = HTTParty.get("http://api.openweathermap.org/data/2.5/weather?zip=#{zipcode},#{country}&units=imperial&appid=#{ENV['OPEN_WEATHER_MAP_API_KEY']}")
         city = response["name"]
         main_weather = response["weather"][0]["main"]
         temperature = response["main"]["temp"].to_s

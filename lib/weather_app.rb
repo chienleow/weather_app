@@ -5,6 +5,7 @@ require_relative "./weather_app/weather"
 
 require "httparty"
 require "pry"
+require "dotenv/load"
 require "colorize"
 
 
