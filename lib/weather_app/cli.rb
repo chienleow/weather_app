@@ -2,9 +2,8 @@ class WeatherApp::CLI
     def start_app
         puts "\nHello! Welcome to The Weather App!"
         until @user_input == "exit"
-            enter_location
+            enter_zipcode
             get_user_input
-            verify_location
             weather_info
             next_step
         end
@@ -24,7 +23,8 @@ class WeatherApp::CLI
     end
 
     def valid_input(user_input)
-        user_input >= "00501" && user_input <= "99950" #try random zipcode to see if it breaks REMEMBER!!!
+        user_input.between?(00501, 99950)
+        # user_input >= 00501 && user_input <= 99950 #try random zipcode to see if it breaks REMEMBER!!!
     end
 
     def invalid_input
@@ -32,19 +32,19 @@ class WeatherApp::CLI
     end
 
     def weather_info
-        info = WeatherApp::Weather.all
-        info.each do |weather|
+        api_response = WeatherApp::Weather.all
+        api_response.each do |weather|
             puts "| City: #{weather.city} | Weather: #{weather.main_weather} | Temperature: #{weather.temperature} |"
         end
     end
 
-    # def next_step
-    #     puts "\nType 'exit' to quit app or hit any key to choose a new category.".colorize(:yellow)
-    #     user_input = gets.strip
-    # end
+    def next_step
+        puts "\nType 'exit' to quit app or hit any key to choose a new category.".colorize(:yellow)
+        user_input = gets.strip
+    end
 
-    # def exit
-    #     puts "\nGoodbye, thanks for using the app!"
-    #     puts "\nWherever you go, no matter what the weather, always bring your own sunshine. -Anthony J.D'Angelo"
-    # end
+    def exit
+        puts "\nGoodbye, thanks for using the app!"
+        puts "\nWherever you go, no matter what the weather, always bring your own sunshine. -Anthony J.D'Angelo"
+    end
 end
