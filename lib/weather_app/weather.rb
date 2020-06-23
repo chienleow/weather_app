@@ -17,7 +17,6 @@ class WeatherApp::Weather
     end
 
     def self.all
-        WeatherApp::API.get_weather if @@all.empty?
         @@all
         # binding.pry
     end

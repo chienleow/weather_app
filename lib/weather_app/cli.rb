@@ -23,8 +23,7 @@ class WeatherApp::CLI
     end
 
     def valid_input(user_input)
-        user_input.between?(00501, 99950)
-        # user_input >= 00501 && user_input <= 99950 #try random zipcode to see if it breaks REMEMBER!!!
+        user_input.between?(00501, 99950) #try random zipcode to see if it breaks REMEMBER!!!
     end
 
     def invalid_input
@@ -39,7 +38,7 @@ class WeatherApp::CLI
     end
 
     def next_step
-        puts "\nType 'exit' to quit app or hit any key to choose a new category.".colorize(:yellow)
+        puts "\nType 'exit' to quit app or hit any key to enter a US zipcode.".colorize(:yellow)
         user_input = gets.strip
     end
 

@@ -8,7 +8,7 @@ class WeatherApp::API
     #     @key = "d11a067cc49844d662653dd873932b94"
     # end
 
-    def self.get_weather
+    def self.get_weather(user_input)
         WeatherApp::CLI.new.valid_input(user_input)
         user_input = zipcode
         # binding.pry
