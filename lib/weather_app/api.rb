@@ -6,7 +6,6 @@ class WeatherApp::API
         country = "US"
         api_key = ENV['OPEN_WEATHER_MAP_API_KEY']
         response = HTTParty.get("http://api.openweathermap.org/data/2.5/forecast?zip=#{zipcode},#{country}&units=imperial&mode=xml&appid=#{api_key}")
-        # binding.pry
         if response.first.include?("ClientError")
             WeatherApp::CLI.new.invalid_input
             WeatherApp::CLI.new.get_user_input
@@ -14,9 +13,10 @@ class WeatherApp::API
             city = response["weatherdata"]["location"]["name"]
             data = response["weatherdata"]["forecast"]["time"]
             data.each do |item|
+                date = item["from"]
                 main_weather = item["symbol"]["name"]
-                time_from = item["from"]
-                WeatherApp::Weather.new(city, main_weather, time_from)
+                temperature = item["temperature"]["value"]
+                WeatherApp::Weather.new(city, date, main_weather, temperature)
             end
         end
     end

@@ -34,8 +34,8 @@ class WeatherApp::CLI
         api_response = WeatherApp::Weather.all
             puts "\nDisplaying weather in '#{api_response.first.city}' for the next 5 days:".colorize(:blue)
             api_response.each do |item|
-                if item.time_from.include?("00:00:00")
-            puts "| Date: #{item.time_from[0,10]} | Weather: #{item.main_weather}"
+                if item.date.include?("00:00:00")
+            puts "| Date: #{item.date[0,10]} | Temperature: #{item.temperature[0,2]}°F | Weather: #{item.main_weather}"
                 end
             end
     end
