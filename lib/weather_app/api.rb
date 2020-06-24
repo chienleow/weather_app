@@ -1,7 +1,6 @@
 class WeatherApp::API
 
     def self.get_weather(user_input)
-        WeatherApp::CLI.new.valid_input(user_input)
         zipcode = user_input
         country = "US"
         api_key = ENV['OPEN_WEATHER_MAP_API_KEY']

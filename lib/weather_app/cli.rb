@@ -1,7 +1,7 @@
 class WeatherApp::CLI
     def start_app
         puts "\nHello! Welcome to The Weather App!".colorize(:magenta)
-        puts "\Please enter a US zipcode you want to search for.".colorize(:light_blue)
+        puts "\nPlease enter a US zipcode you want to search for.".colorize(:light_blue)
         user_zipcode
         next_step
     end
