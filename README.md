@@ -1,6 +1,6 @@
 # WeatherApp
 
-Welcome to the Weather App! This is a Ruby gem with a command line interface for users to enter zip code and view weather of the selected location for the next 5 days.
+Welcome to the Weather App! This is a Ruby gem with a command line interface for users to enter zip code and view weather of the selected location for the next 5 days, weather information from https://openweathermap.org/.
 
 ## Installation
 
