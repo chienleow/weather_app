@@ -31,7 +31,7 @@ class WeatherApp::CLI
 
     def next_step
         puts "\nHit any key to restart session".colorize(:yellow)
-        puts "\n||| Wherever you go, no matter what the weather, always bring your own sunshine. -Anthony J.D'Angelo |||".colorize(:green)
+        puts "\n||| Wherever you go, no matter what the weather, always bring your own sunshine.🌞 -Anthony J.D'Angelo |||".colorize(:green)
         user_input = gets.strip
     end
 end
