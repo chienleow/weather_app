@@ -11,6 +11,9 @@ To get started locally, follow the steps:
 2. Click the green button "Clone" on the top right and copy the remote URL from "Clone with SSH"
 3. Type ```git clone``` then paste the copied URL into your terminal
 4. Install dependencies with ```bundle install```
+5. Sign up for a free account to get an API key from https://openweathermap.org/api
+6. Follow the steps to hide your API key https://medium.com/better-programming/how-to-hide-your-api-keys-c2b952bc07e6
+7. Add your API key in ```.env``` file ```OPEN_WEATHER_MAP_API_KEY = 'YOUR_API_KEY'```
 
 
 ## Usage
