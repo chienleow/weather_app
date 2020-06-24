@@ -6,26 +6,19 @@ This Weather App utilizes API from https://openweathermap.org/. On start up, the
 
 ## Installation
 
-Add this line to your application's Gemfile:
+To get started locally, follow the steps:
+1. Navigate to the repo https://github.com/chienleow/weather_app
+2. Click the green button "Clone" on the top right and copy the remote URL from "Clone with SSH"
+3. Type ```git clone``` then paste the copied URL into your terminal
+4. Install dependencies with ```bundle install```
 
-```ruby
-gem 'weather_app'
-```
-
-And then execute:
-
-    $ bundle install
-
-Or install it yourself as:
-
-    $ gem install weather_app
 
 ## Usage
 
-To run Ecommerce App from your command line, type the below and follow the on screen prompts.
+To run Weather App from your command line, type the below and follow the on screen prompts.
 
 ```
-$ bin/weather
+bin/weather
 ```
 
 ## Development
