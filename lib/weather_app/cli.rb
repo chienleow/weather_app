@@ -1,7 +1,7 @@
 class WeatherApp::CLI
     def start_app
         puts "\nHello! Welcome to The Weather App!".colorize(:magenta)
-        puts "\nPlease enter a US zipcode you want to search for.".colorize(:light_blue)
+        puts "\nPlease enter a US zip code you want to search for.".colorize(:light_blue)
         user_zipcode
         next_step
     end
@@ -12,7 +12,7 @@ class WeatherApp::CLI
     end
 
     def invalid_input
-        puts "\nERROR: Sorry, input error, please try again.".colorize(:red)
+        puts "\nERROR: Sorry, invalid zip code, please try again.".colorize(:red)
     end
 
     def weather_info(zipcode)
@@ -30,7 +30,7 @@ class WeatherApp::CLI
     end
 
     def next_step
-        puts "\nHit any key to restart session".colorize(:yellow)
+        puts "\nHit any key to restart session.".colorize(:yellow)
         puts "\n||| Wherever you go, no matter what the weather, always bring your own sunshine.🌞 -Anthony J.D'Angelo |||".colorize(:green)
         user_input = gets.strip
     end
