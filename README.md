@@ -2,7 +2,7 @@
 
 This is a CLI (Command Line Interface) App built in Ruby.
 
-This Weather App utilizes API from https://openweathermap.org/. On start up, the app will welcome the user and ask for a US zipcode. Users can enter a valid US zipcode to view the main weather and temperature for the next 5 days. Then, users can hit any key to restart the session.
+This Weather App utilizes API from https://openweathermap.org/. On start up, the app will welcome the user and ask for a US zipcode. A User can enter a valid US zipcode to view the main weather and temperature for the next 5 days. Then, user can hit any key to restart the session.
 
 ## Installation
 
