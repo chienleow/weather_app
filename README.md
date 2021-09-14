@@ -6,6 +6,9 @@ OpenWeatherMap](https://openweathermap.org/). On start up, the app will welcome 
 ## Built With
 - [Ruby](https://www.ruby-lang.org/en/)
 
+## Demo
+- [Video Walkthrough](https://youtu.be/hpV0DgYqJyI)
+
 ## Installation
 
 To get started locally, follow the steps:
